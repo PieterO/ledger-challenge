@@ -73,28 +73,29 @@
     <body>
         <div class="flex-center position-ref full-height nineties">
             @if (Route::has('login'))
-                <div class="top-right links">
+                <div class="top-right links" style="background-color:white">
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
                     @endauth
                 </div>
             @endif
 
             <div class="content">
-                <div class="title m-b-md" style="background-color:CORNSILK">
+                <div class="title m-b-md" style="background-color:cornsilk">
                     Balance
                 </div>
 
-                <div class="subtitle">
+
+                <div class="subtitle" style="background-color:lightcyan">>
                     For all your money needs, when you join us you get {{ numfmt_format_currency(config('global.fmt')
 , config('global.startingBalance'), 'GBP')}} free!
                 </div>
+
+                @if (Route::has('register'))
+                    <a href="{{ route('register') }}"><h2 align="CENTER"><blink><marquee behavior="alternative">JOIN TODAY</marquee></blink></h2></a>
+                @endif
             </div>
         </div>
     </body>
