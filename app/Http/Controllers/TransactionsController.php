@@ -13,6 +13,16 @@ use Illuminate\View\View;
 class TransactionsController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * Show the form for creating a new withdrawal.
      */
     public function createWithdrawal(Request $request): View
