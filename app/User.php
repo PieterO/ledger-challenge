@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Log;
 
 class User extends Authenticatable
 {
@@ -94,6 +95,7 @@ class User extends Authenticatable
     {
         if ($this->getBalanceAttribute() < 0 && abs($this->getBalanceAttribute()) > $this->overdraftLimit)
         {
+            Log::alert('user is outside our overdraft limit, this will need fixing urgently.');
             return true;
         }
         return false;

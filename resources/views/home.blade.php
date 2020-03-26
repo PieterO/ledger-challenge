@@ -25,7 +25,15 @@
                 @endif
 
                 @if($user->isInOverdraft())
-                    Uh oh, you're in the overdraft, (stop eating avocados, heating your home, something something bootstraps).
+                    <div class="alert alert-warning" role="alert">
+                        Uh oh, you're in the overdraft, (stop eating avocados, heating your home, something something bootstraps).
+                    </div>
+                @endif
+
+                @if($user->isInUnplannedOverdraft())
+                    <div class="alert alert-danger" role="alert">
+                        You're outside the overdraft, this is something which should never happen, please contact us immediately.
+                    </div>
                 @endif
 
                 <br>
