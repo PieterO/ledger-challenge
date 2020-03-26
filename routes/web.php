@@ -25,4 +25,10 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/settings', 'SettingsController@index')->name('settings');
+
+    Route::get('/deposit', 'TransactionsController@createDeposit')->name('deposit');
+    Route::post('/deposit', 'TransactionsController@deposit')->name('transactions.deposit.store');
+
+    Route::get('/withdraw', 'TransactionsController@createWithdrawal')->name('withdraw');
+    Route::post('/withdraw', 'TransactionsController@withdraw')->name('transactions.withdraw.store');
 });
