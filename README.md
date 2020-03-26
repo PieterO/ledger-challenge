@@ -1,6 +1,6 @@
 # LedgerTechnical Challenge
 
-![Unit and Functional Tests](https://github.com/PiOliver/loqbox-challenge-2020/workflows/Continuous%20Integration%20Laravel%206/badge.svg)
+![Continuous Integration](https://github.com/PieterO/ledger-challenge/workflows/Continuous%20Integration/badge.svg?branch=master&event=push)
 
 Small project as part of an application.
 
